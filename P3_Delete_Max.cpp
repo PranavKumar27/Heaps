@@ -32,9 +32,12 @@ void delete_Max(vector<int>& Arr)
     int largest_val = Arr[0];
     cout << "to be deleted = " << largest_val << endl;
     int new_large = Arr[sz-1];
-    cout << "to be percolated Upwards = " << new_large << endl;
+    cout << "to be percolated Downwards = " << new_large << endl;
+    // Reduce the Array size
     Arr.resize(sz-1);
+    // Make leaf node as new root
     Arr[0] = new_large;
+    // Percolate Downwards using Heapify
     Max_Heapify(Arr,0);
 }
 
