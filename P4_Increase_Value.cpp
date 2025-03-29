@@ -16,6 +16,7 @@ int increaseValAtKey(vector<int>& Arr,int val,int key)
         return -1;
     }
 
+    // Percolate Algo
     Arr[key] = val;
 
     int i = key;
