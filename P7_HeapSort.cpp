@@ -102,7 +102,9 @@ int main()
 
     cout << "<<<<<<-------HeapSort------>>>>>>" << endl;
 
-    //buildHeap(Arr);
+    //Two implementation of build Heap
+    
+    //buildHeap(Arr);  
     buildMax_Heap(Arr);
 
     print_1D_v(Arr);
