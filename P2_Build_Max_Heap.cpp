@@ -29,8 +29,8 @@ void Max_Heapify(vector<int>& Arr,int idx)
 void buildMax_Heap(vector<int>& Arr)
 {
     int n = Arr.size();
-    int leafNode_idx = floor(n/2) - 1;
-    for(int i=leafNode_idx;i>=0;i--)
+    int InternalNode_idx = floor(n/2) - 1;
+    for(int i=InternalNode_idx;i>=0;i--)
     {
         Max_Heapify(Arr,i);
     }
