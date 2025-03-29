@@ -26,11 +26,20 @@ void Max_Heapify(vector<int>& Arr,int idx)
         return;
 }
 
-void delete_Max(vector<int>& Arr)
+// TC --> O(LogN)
+// SC --> O(LogN)
+
+int delete_Max(vector<int>& Arr)
 {
     int sz = Arr.size();
+    if(sz==1)
+    {
+        cout << "Heap UnderFlow Single Element Delete Skipped" << endl;
+        return -1;
+    }
+
     int largest_val = Arr[0];
-    cout << "to be deleted = " << largest_val << endl;
+
     int new_large = Arr[sz-1];
     cout << "to be percolated Downwards = " << new_large << endl;
     // Reduce the Array size
@@ -39,6 +48,7 @@ void delete_Max(vector<int>& Arr)
     Arr[0] = new_large;
     // Percolate Downwards using Heapify
     Max_Heapify(Arr,0);
+    return largest_val;
 }
 
 void print_1D_v(vector<int>& Arr)
@@ -53,7 +63,9 @@ int main()
     vector<int> Arr = {9,8,7,5,4,3,2};
     cout << "Before Extract Max or Delete Max Algo Applied" << endl;
     print_1D_v(Arr);
-    delete_Max(Arr);
+    int val = delete_Max(Arr);
+    cout << "Val deleted = " << val << endl;
+
     cout << "After Extract Max or Delete Max Algo Applied" << endl;
     print_1D_v(Arr);
 
