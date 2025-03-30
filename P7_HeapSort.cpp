@@ -84,7 +84,7 @@ void buildHeap(vector<int>& Arr)
 void buildMax_Heap(vector<int>& Arr)
 {
     int n = Arr.size();
-    int InternalNode_idx = floor(n/2) - 1;
+    int InternalNode_idx = floor(n/2.0) - 1;
     for(int i=InternalNode_idx;i>=0;i--)
     {
         heapify(Arr,i,n-1);
