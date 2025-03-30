@@ -75,6 +75,37 @@ public:
 
         return largest;
     }
+
+// Optimized Solition ----------------------------------------------------------<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+int lastStoneWeight(vector<int>& stones) {
+        
+        int n = stones.size();
+        priority_queue<int> heap;
+        for(int i=0;i<n;i++)
+            heap.push(stones[i]);
+
+        while(n>=2)
+        {
+            int ele_1 = heap.top();
+            heap.pop();
+            int ele_2 = heap.top();
+            heap.pop();
+            int diff = abs(ele_1-ele_2);
+            n=n-2;
+            //cout << "diff=" << diff << endl;
+            if(diff!=0)
+            {
+                heap.push(diff);
+                n=n+1;
+            }
+        }
+
+        if(!heap.empty())
+            return heap.top();
+        else
+            return 0;
+    }
+// UnOptimized Solution  <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<-------------------------------------------------------------------------
     int lastStoneWeight(vector<int>& stones) {
         
         buildHeap(stones); 
