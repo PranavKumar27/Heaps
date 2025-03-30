@@ -37,6 +37,8 @@ void heapify(vector<int>& Arr,int idx,int sz)
         return;
 }
 
+// IF we need to add single element to Heap use Percolate Up
+// Else if we have Array Add by Running loop for only Internal Nodes
 void buildHeap(vector<int>& Arr,int element)
 {
     cout << __FUNCTION__ << endl;
