@@ -70,6 +70,10 @@ void Insert(vector<int>& Arr,int idx)
 
 // TC --> O(N*LogN) by Logic but by Proof O(N)
 // SC --> O(1)
+
+// IF we need to add single element to Heap use Percolate Up  buildHeap()
+// Else if we have Array Add by Running loop for only Internal Nodes  buildMax_Heap
+
 void buildHeap(vector<int>& Arr)
 {
     cout << __FUNCTION__ << endl;
