@@ -18,7 +18,13 @@
 // and again insert remaining elements one by one till n elements
 // Pop last k+1 elements from Heap and update in Array
 
+#include <iostream>
+#include <vector>
+#include <queue>
 
+using namespace std;
+
+// TC : O(k*LogN)
 int main()
 {
   vector<int> arr = {6 5 3 2 8 10 9};
