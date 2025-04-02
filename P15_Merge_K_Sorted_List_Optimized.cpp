@@ -54,24 +54,14 @@ class Compare
     }
 };
 
-class Comp
-{
-    public:
-    bool customComparison(Node* a, Node* b)
-    {
-        // Custom comparison logic
-        return a->val > b->val; // it sorts in ascending order
-    }
-};
-
 
 Node* mergeKList(vector<Node*> NodeList)
 {
-    priority_queue<Node*,vector<Node*>,Comp> heap; // Min Heap
+    priority_queue<Node*,vector<Node*>,Compare> heap; // Min Heap
 
     for(int i=0;i<NodeList.size();i++)
     {
-        if(lists[i]!=nullptr)
+        if(NodeList[i]!=nullptr)
             heap.push(NodeList[i]);
     }
 
